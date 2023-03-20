@@ -3,10 +3,18 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 typedef char *string;
 
 typedef float real;
+
+typedef struct date
+{
+    int day;
+    int month;
+    int year;
+} date;
 
 void outstring(string str);
 
@@ -69,3 +77,15 @@ int asc(char thisChar);
 char chr(int x);
 
 int real_to_int(real x);
+
+real rnd(int x);
+
+int day(date thisDate);
+
+int month(date thisDate);
+
+int year(date thisDate);
+
+date setDate(int d, int m, int y);
+
+date today(void);

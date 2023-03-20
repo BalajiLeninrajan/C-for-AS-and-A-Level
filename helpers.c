@@ -181,7 +181,43 @@ char chr(int x)
     return x;
 }
 
+// Returns the integer part of x
 int real_to_int(real x)
 {
     return (int)x;
+}
+
+// Returns a real number in the range 0 to x (not inclusive of x).
+real rnd(int x)
+{
+    srand(time(0));
+    return ((float)rand() / (float)(RAND_MAX)) * x;
+}
+
+// Returns the current day number from ThisDate
+int day(date thisDate)
+{
+    return thisDate.day;
+}
+
+// Returns the current month number from ThisDate
+int month(date thisDate)
+{
+    return thisDate.month;
+}
+
+// Returns the current year number from ThisDate
+int year(date thisDate)
+{
+    return thisDate.year;
+}
+
+// returns a variable of type DATE with the value of <d>/<m>/<y>
+date setDate(int d, int m, int y)
+{
+    date newDate;
+    newDate.day = d;
+    newDate.month = m;
+    newDate.year = y;
+    return newDate;
 }
