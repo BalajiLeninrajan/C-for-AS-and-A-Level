@@ -45,6 +45,33 @@ void printdate(date dt);
                                    date         \
                                  : printdate)(message)
 
+void printstringns(string str);
+
+void printcharns(char chr);
+
+void printintns(int num);
+
+void printrealns(real num);
+
+void printboolns(bool x);
+
+void printdatens(date dt);
+
+// Outputs to terminal with no new line
+#define outputns(message) _Generic((message),       \
+                                   string           \
+                                   : printstringns, \
+                                     char           \
+                                   : printcharns,   \
+                                     int            \
+                                   : printintns,    \
+                                     bool           \
+                                   : printboolns,   \
+                                     real           \
+                                   : printrealns,   \
+                                     date           \
+                                   : printdatens)(message)
+
 string input(void);
 
 string left(string thisString, int x);

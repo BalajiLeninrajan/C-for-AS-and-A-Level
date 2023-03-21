@@ -36,6 +36,42 @@ void printdate(date dt)
     printf("%02d/%02d/%d\n", dt.day, dt.month, dt.year);
 }
 
+// Prints strings
+void printstringns(string str)
+{
+    printf("%s", str);
+}
+
+// Prints chars
+void printcharns(char chr)
+{
+    printf("%c", chr);
+}
+
+// Prints integers
+void printintns(int num)
+{
+    printf("%i", num);
+}
+
+// Prints reals
+void printrealns(real num)
+{
+    printf("%f", num);
+}
+
+// Prints booleans
+void printboolns(bool x)
+{
+    printf("%s", x ? "true" : "false");
+}
+
+// Prints dates
+void printdatens(date dt)
+{
+    printf("%02d/%02d/%d", dt.day, dt.month, dt.year);
+}
+
 // Gets input
 string input(void)
 {
