@@ -4,9 +4,9 @@ int main(void)
 {
     // Getting what the user wants to do
     char operation;
-    outputns("Enter operation ( + | - | / | * | !): ");
+    outputns("Enter operation ( + | - | / | * | ! ): ");
 
-    // Converts String to Char (Don't question it, it will make sense later)
+    // Gets input and converts String to Char (Don't question it, it will make sense later)
     operation = input()[0];
 
     // Write code to so that
