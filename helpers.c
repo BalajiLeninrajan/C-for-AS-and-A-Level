@@ -1,33 +1,39 @@
 #include "helpers.h"
 
 // Prints strings
-void outstring(string str)
+void printstring(string str)
 {
     printf("%s\n", str);
 }
 
 // Prints chars
-void outchar(char chr)
+void printchar(char chr)
 {
     printf("%c\n", chr);
 }
 
 // Prints integers
-void outint(int num)
+void printint(int num)
 {
     printf("%i\n", num);
 }
 
 // Prints reals
-void outreal(real num)
+void printreal(real num)
 {
     printf("%f\n", num);
 }
 
 // Prints booleans
-void outbool(bool x)
+void printbool(bool x)
 {
     printf("%s\n", x ? "true" : "false");
+}
+
+// Prints dates
+void printdate(date dt)
+{
+    printf("%02d/%02d/%d\n", dt.day, dt.month, dt.year);
 }
 
 // Gets input
@@ -38,7 +44,7 @@ string input(void)
     return newString;
 }
 
-// Returns leftmost x characters from ThisString
+// Returns leftmost x characters from thisString
 string left(string thisString, int x)
 {
     string newString = malloc(sizeof(char) * x);
@@ -49,7 +55,7 @@ string left(string thisString, int x)
     return newString;
 }
 
-// Returns rightmost X characters from ThisString
+// Returns rightmost X characters from thisString
 string right(string thisString, int x)
 {
     int len = strlen(thisString);
@@ -61,7 +67,7 @@ string right(string thisString, int x)
     return newString;
 }
 
-// Returns a string of length y starting at position x from ThisString
+// Returns a string of length y starting at position x from thisString
 string mid(string thisString, int x, int y)
 {
     string newString = malloc(sizeof(char) * y);
@@ -72,13 +78,13 @@ string mid(string thisString, int x, int y)
     return newString;
 }
 
-// Returns the integer value representing the length of string ThisString
+// Returns the integer value representing the length of string thisString
 int length(string thisString)
 {
     return strlen(thisString);
 }
 
-// Returns the character representing the lower-case equivalent of ThisChar
+// Returns the character representing the lower-case equivalent of thisChar
 // Alphabetic characters that are not upper case are returned unchanged.
 char lcase(char thisChar)
 {
@@ -92,7 +98,7 @@ char lcase(char thisChar)
     }
 }
 
-// Returns the character representing the upper-case equivalent of ThisChar
+// Returns the character representing the upper-case equivalent of thisChar
 // Alphabetic characters that are not lower case are returned unchanged.
 char ucase(char thisChar)
 {
@@ -106,7 +112,7 @@ char ucase(char thisChar)
     }
 }
 
-// Returns a string formed by converting all characters of ThisString to upper case.
+// Returns a string formed by converting all characters of thisString to upper case.
 string to_upper(string thisString)
 {
     string newString = malloc(sizeof(thisString));
@@ -117,7 +123,7 @@ string to_upper(string thisString)
     return newString;
 }
 
-// Returns a string formed by converting all characters of ThisString to lower case.
+// Returns a string formed by converting all characters of thisString to lower case.
 string to_lower(string thisString)
 {
     string newString = malloc(sizeof(thisString));
@@ -142,7 +148,7 @@ int str_to_int(string x)
     return atoi(x);
 }
 
-// Returns the value TRUE if ThisChar represents a valid numeric value.
+// Returns the value TRUE if thisChar represents a valid numeric value.
 bool is_numc(char thisChar)
 {
     if (thisChar >= 97 && thisChar <= 122)
@@ -159,7 +165,7 @@ bool is_numc(char thisChar)
     }
 }
 
-// Returns the value TRUE if ThisString represents a valid numeric value.
+// Returns the value TRUE if thisString represents a valid numeric value.
 bool is_nums(string thisString)
 {
     for (int i = 0; i < strlen(thisString); i++)
@@ -169,7 +175,7 @@ bool is_nums(string thisString)
     return true;
 }
 
-// Returns an integer value (the ASCII value) of character ThisChar
+// Returns an integer value (the ASCII value) of character thisChar
 int asc(char thisChar)
 {
     return thisChar;
@@ -194,25 +200,25 @@ real rnd(int x)
     return ((float)rand() / (float)(RAND_MAX)) * x;
 }
 
-// Returns the current day number from ThisDate
+// Returns the current day number from thisDate
 int day(date thisDate)
 {
     return thisDate.day;
 }
 
-// Returns the current month number from ThisDate
+// Returns the current month number from thisDate
 int month(date thisDate)
 {
     return thisDate.month;
 }
 
-// Returns the current year number from ThisDate
+// Returns the current year number from thisDate
 int year(date thisDate)
 {
     return thisDate.year;
 }
 
-// returns a variable of type DATE with the value of <d>/<m>/<y>
+// Returns a variable of type DATE with the value of <d>/<m>/<y>
 date setDate(int d, int m, int y)
 {
     date newDate;

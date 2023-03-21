@@ -9,35 +9,41 @@ typedef char *string;
 
 typedef float real;
 
+typedef bool boolean;
+
 typedef struct date
 {
-    int day;
-    int month;
-    int year;
+  int day;
+  int month;
+  int year;
 } date;
 
-void outstring(string str);
+void printstring(string str);
 
-void outchar(char chr);
+void printchar(char chr);
 
-void outint(int num);
+void printint(int num);
 
-void outreal(real num);
+void printreal(real num);
 
-void outbool(bool x);
+void printbool(bool x);
+
+void printdate(date dt);
 
 // Outputs to terminal
-#define output(message) _Generic((message),   \
-                                 string       \
-                                 : outstring, \
-                                   char       \
-                                 : outchar,   \
-                                   int        \
-                                 : outint,    \
-                                   bool       \
-                                 : outbool,   \
-                                   real       \
-                                 : outreal)(message)
+#define output(message) _Generic((message),     \
+                                 string         \
+                                 : printstring, \
+                                   char         \
+                                 : printchar,   \
+                                   int          \
+                                 : printint,    \
+                                   bool         \
+                                 : printbool,   \
+                                   real         \
+                                 : printreal,   \
+                                   date         \
+                                 : printdate)(message)
 
 string input(void);
 
